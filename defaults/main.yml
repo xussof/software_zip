@@ -1,2 +1,3 @@
----
-# defaults file for software_zip
+#Example on how to define software version. Dont fill this var if you want the latest version
+#version-zip:
+#byxussof this doesn't work yet

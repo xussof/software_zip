@@ -1,22 +1,28 @@
 ---
-- name: Installing zip packages using apt
-  become: true
-  apt:
-    pkg: "zip"
-    update_cache: yes
-    state: latest
-  when: ansible_distribution == 'Ubuntu'
+#- name: Installing zip packages using apt
+#  become: true
+#  apt:
+#    pkg: "zip"
+#    update_cache: yes
+#    state: latest
+#  when: ansible_distribution == 'Ubuntu'
 
-- name: Installing zip packages using yum
-  become: true
-  yum:
-    pkg: "zip"
-    update_cache: yes
-    state: latest
-  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+#- name: Installing zip packages using yum
+#  become: true
+#  yum:
+#    pkg: "zip"
+#    update_cache: yes
+#    state: latest
+#  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
 
-- name: Installing zip packages using pacman
-  pacman:
+#- name: Installing zip packages using pacman
+#  pacman:
+#    name: "zip"
+#    state: present
+#  when: ansible_distribution == 'MacOSX'
+
+- name: Installing zip packages
+  become: true
+  package:
     name: "zip"
     state: present
-  when: ansible_distribution == 'MacOSX'
